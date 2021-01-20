@@ -1,0 +1,49 @@
+﻿<Page x:Class="TRPZ.SellPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TRPZ"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="SellPage">
+
+    <DockPanel>
+        <TextBlock Text="Продажа товара" FontSize="20" FontWeight="Bold" Foreground="#FF588FDE" DockPanel.Dock="Top" HorizontalAlignment="Center"/>
+        <StackPanel DockPanel.Dock="Top"  Orientation="Horizontal">
+            <Border BorderBrush="#FF7CA2D8" BorderThickness="1" CornerRadius="3" Height="65" Width="300" Margin="20, 10, 0, 0" HorizontalAlignment="Left">
+                <StackPanel>
+                    <TextBlock Margin="10, 10, 0, 5">
+            <Run FontSize="12" FontWeight="Bold" Foreground="#FF5884C5" Text="Сотрудник: " />
+            <Run Foreground="#FF76A1E0" Name="employee" />
+                    </TextBlock>
+                    <TextBlock Margin="10, 5, 0, 5">
+            <Run FontSize="12" FontWeight="Bold" Foreground="#FF5884C5" Text="Время: " />
+            <Run Foreground="#FF76A1E0" Name="time" />
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+            <Border BorderBrush="#FF7CA2D8" Margin="100, 0, 0 ,0" BorderThickness="1" CornerRadius="3" Height="35" Width="120" HorizontalAlignment="Right">
+                <Button Name="SellBtn" Height="35" Width="120" Background="#FF7CA2D8" Foreground="White" Content="Выбрать товар" FontWeight="Bold" FontSize="14" Command="{Binding ShowItems}"/>
+            </Border>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Bottom">
+            <Border BorderBrush="#FF7CA2D8" Margin="15, 0, 10 ,10" BorderThickness="1" CornerRadius="3" Height="50" Width="200" HorizontalAlignment="Left">
+                <StackPanel>
+                    <TextBlock Margin="10, 10, 0, 5">
+            <Run FontSize="13" FontWeight="Bold" Foreground="#FF3A67A8" Text="Всего: " />
+            <Run Foreground="#FF3A67A8" Text="$" />
+            <Run Name="total" Text="0" Foreground="#FF76A1E0" />
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+            <Border BorderBrush="#FF7CA2D8" Margin="220, 0, 0 , 250" BorderThickness="1" CornerRadius="3" Height="50" Width="100" HorizontalAlignment="Center">
+                <Button Height="50" Width="100" Background="#FF7CA2D8" Foreground="White" Content="Продать" FontWeight="Bold" FontSize="16" Command="{Binding SellCommand}" />
+            </Border>
+        </StackPanel>
+        <Border BorderBrush="#FF2660B4" Margin="15, 50, 0 , 50" BorderThickness="1" CornerRadius="1" Height="200" Width="600" HorizontalAlignment="Center">
+            <DataGrid Name="dataGrid" AutoGenerateColumns="True" AutoGeneratingColumn="dataGrid_AutoGeneratingColumn">
+            </DataGrid>
+        </Border>
+    </DockPanel>
+</Page>

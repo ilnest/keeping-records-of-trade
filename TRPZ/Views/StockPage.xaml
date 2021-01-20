@@ -1,0 +1,39 @@
+﻿<Page x:Class="TRPZ.StockPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TRPZ"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="StockPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Border Margin="20 0 0 0" CornerRadius="4" BorderBrush="#FF7CA2D8" BorderThickness="2" Height="40" Width="255">
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton Name="observeMode" GroupName="Action" Content="Просмотр"  Foreground="#FF5884C5" FontSize="14" FontWeight="Bold" Margin="10 8 0 0" IsChecked="True" />
+                    <RadioButton Name="changeMode" GroupName="Action" Content="Редактирование"  Foreground="#FF5884C5" FontSize="14" FontWeight="Bold" Margin="10 8 0 0" Checked="changeMode_Checked" />
+                </StackPanel>
+            </Border>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <local:MyUserControl x:Name="grid"/>
+            <StackPanel>
+                <Border Margin="50 0 0 0" CornerRadius="4" HorizontalAlignment="Right" BorderBrush="#FF7CA2D8" BorderThickness="2" Height="40" Width="120">
+                    <Button Name="changeBtn" Height="40" Width="120" Content="ИЗМЕНИТЬ" FontSize="14" FontWeight="Bold" Background="#FF7CA2D8" Foreground="White" Click="ChangeBtn_Click" />
+                </Border>
+                <Border Margin="50 20 0 0" CornerRadius="4" HorizontalAlignment="Right" BorderBrush="#FF7CA2D8" BorderThickness="2" Height="40" Width="120">
+                    <Button Name="addBtn" Height="40" Width="120" Content="Добавить" FontSize="14" FontWeight="Bold" Background="#FF7CA2D8" Foreground="White" Click="addBtn_Click" />
+                </Border>
+                <Border Margin="50 20 0 0" CornerRadius="4" HorizontalAlignment="Right" BorderBrush="#FF7CA2D8" BorderThickness="2" Height="40" Width="120">
+                    <Button Name="delBtn" Height="40" Width="120" Content="Удалить" FontSize="14" FontWeight="Bold" Background="#FF7CA2D8" Foreground="White" Click="dellBtn_Click" />
+                </Border>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
